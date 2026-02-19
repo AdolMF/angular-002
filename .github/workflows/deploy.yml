@@ -18,11 +18,8 @@ jobs:
       - run: npm ci
       - run: npm run build -- --configuration production
 
-      - name: Inspect dist
-        run: |
-          ls -la dist
-          ls -la dist/* || true
-          ls -la dist/*/browser || true
+      - name: Ver contenido de dist
+        run: ls -R dist
 
       # AJUSTA EL path cuando veas la estructura en logs
       - name: Deploy via rsync
